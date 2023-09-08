@@ -172,18 +172,18 @@
 // console.log(answerOfFunction);^
 
 // How to get unique number without numbers which are duplicates!!!! Using the XOR operator with ^
-const array = [1, 2, 3, 4, 3, 2, 1];
+// const array = [1, 2, 3, 4, 3, 2, 1];
 
-function uniqueValues(array) {
-  let uniqueElements = 0;
+// function uniqueValues(array) {
+//   let uniqueElements = 0;
 
-  for (let i = 0; i < array.length; i++) {
-    uniqueElements ^= array[i];
-  }
-  return uniqueElements;
-}
-const callFunctionUniqueValues = uniqueValues(array);
-console.log(callFunctionUniqueValues);
+//   for (let i = 0; i < array.length; i++) {
+//     uniqueElements ^= array[i];
+//   }
+//   return uniqueElements;
+// }
+// const callFunctionUniqueValues = uniqueValues(array);
+// console.log(callFunctionUniqueValues);
 
 // let map = new Map();
 // map.set("Thomas", "Java");
@@ -252,3 +252,148 @@ console.log(callFunctionUniqueValues);
 
 // let answer = diagonalMatrixSum(mat);
 // console.log("Thes sum is: " + answer);
+// function countingSort(arr) {
+//   let frequencyArray = new Array(100).fill(0);
+//   for(const x of arr){
+//       frequencyArray[x]++;
+//   }
+//   return frequencyArray
+// }
+// console.log(frequencyArray)
+
+// function findMultiples(integer, limit) {
+//   let arrayOfInteger = [];
+//   let length = Math.floor(limit / integer);
+
+//   for (let i = 1; i <= length; i++) {
+//     arrayOfInteger.push( integer * i );
+// }
+
+//   return arrayOfInteger;
+// }
+// console.log(findMultiples(1, 2));
+
+// function removeChar(str){
+//   let seperatedArray = str.split("");
+//   // let popedArray = seperatedArray.pop();
+//   // popedArray = seperatedArray.shift(popedArray);
+//   // let answer = popedArray.join();
+//   return seperatedArray;
+
+// };
+// console.log()
+
+// let str = "hdjhdlkjkwq";
+// let splitString = str.split("");
+// console.log(splitString);
+// splitString.pop();
+// console.log(splitString);
+// splitString.shift();
+// console.log(splitString.join(""));
+
+// return => 2 higest values of list
+// let arr = [4, 10, 10, 9, 20, 20, 30];
+// console.log("not sorted: " + arr)
+// let sortedArr = arr.sort((a, b) => a - b);
+// console.log("sorted: " + sortedArr)
+// let lengthOfSortedArr = sortedArr.length;
+// let answerArr = [];
+
+// if (sortedArr[lengthOfSortedArr - 1].number === sortedArr[lengthOfSortedArr - 2].number) {
+//   return sortedArr.push(sortedArr[lengthOfSortedArr - 1], sortedArr[lengthOfSortedArr - 3])
+// }
+// else {
+//   return answerArr.push(sortedArr[lengthOfSortedArr - 1] , sortedArr[lengthOfSortedArr - 2])
+// }
+
+// let size = 6;
+// let answerArr = [];
+// for (let i = 0; i < size; i++) {
+//   if (i % 2 === 0) {
+//     answerArr.push("1")
+//   } else if (i % 2 !== 0) {
+//     answerArr.push("0")
+//   }
+//   return answerArr.join("").toString();
+// }
+// console.log(answerArr);
+// let a = [1, 2, 1, 1, 3, 2];
+// let result = [...new Set(a)];
+// console.log(result)
+
+// return new string => same sequence BUT first and last must be deleted
+// return sequence but without , instead a space
+// if string length is 2 or less return => NULL
+// let values = "1,2,3,4,5";
+
+// let splitValues = values.split("");
+
+// const newArray = splitValues.filter((item) => item !== ",")
+
+//  console.log(newArray)
+let arr = ["abc:123", "cde:456"];
+console.log("Original: " + arr);
+let arrFirst = [...arr[0]];
+let arrSecond = [...arr[1]];
+console.log(arrFirst);
+console.log(arrSecond);
+
+let arrFirstCollumIndex = arrFirst.indexOf(":");
+let arrSecondCollumIndex = arrSecond.indexOf(":");
+
+// console.log(arrFirstCollumIndex);
+// console.log(arrSecondCollumIndex);
+let lengthArrSecond = arrSecond.length - 1;
+
+let arrFirstFront = arrFirst.splice(0, arrFirstCollumIndex);
+// console.log("arrayFirstFront: " + arrFirstFront);
+let arrSecondBack = arrSecond
+  .splice(arrSecondCollumIndex + 1, lengthArrSecond)
+  .join("");
+
+// console.log("arraySecondBack: " + arrSecondBack);
+let oneTogether = [].concat(arrFirstFront, ":" + arrSecondBack);
+console.log("first answer: " + oneTogether.join(""));
+
+///////////////////////
+
+let lengthArrFirst = arrFirst.length - 1;
+
+let arrSecondFront = arrSecond.splice(0, arrSecondCollumIndex);
+// console.log("arraySecondFront: " + arrSecondFront);
+let arrFirstBack = arrFirst.join("");
+// console.log(arrFirstBack)
+let twoTogether = [].concat(arrSecondFront, arrFirstBack);
+console.log("second answer: " + twoTogether.join(""));
+
+////////////////////////////
+
+let database = {
+  english: "Welcome",
+  czech: "Vitejte",
+  danish: "Velkomst",
+  dutch: "Welkom",
+  estonian: "Tere tulemast",
+  finnish: "Tervetuloa",
+  flemish: "Welgekomen",
+  french: "Bienvenue",
+  german: "Willkommen",
+  irish: "Failte",
+  italian: "Benvenuto",
+  latvian: "Gaidits",
+  lithuanian: "Laukiamas",
+  polish: "Witamy",
+  spanish: "Bienvenido",
+  swedish: "Valkommen",
+  welsh: "Croeso",
+};
+console.log(`"${database.finnish}"`);
+
+let str = "apple ban apple bann";
+
+let answer = [];
+let splittedStr = str.split(" ");
+for (let i = 0; i < splittedStr.length; i++) {
+  answer.push(splittedStr[i] + " " + splittedStr[i].length);
+}
+console.log(answer);
